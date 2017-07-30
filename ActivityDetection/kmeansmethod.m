@@ -1,4 +1,4 @@
-function kmeansmethod(C, t, X, Y, index, windowlength)
+function kmeansmethod( fr, C, t, X, Y, index, windowlength )
     precise = 10;
     X = X(1: 10: end, :);
     Y = Y(1: 10: end);
@@ -25,7 +25,8 @@ function kmeansmethod(C, t, X, Y, index, windowlength)
     end
     
     kms = idx;   
-    figure(1)
+    figure(fr);
+    
     ind = t(find(kms == 1));
     scatter(ind+windowlength, -28*ones(1, length(ind)), 'bo');
     hold on
